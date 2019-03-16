@@ -1,0 +1,24 @@
+{
+  "name": "ikabotti",
+  "version": "0.1.0",
+  "description": "",
+  "main": "ikabotti.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joppe151617/Ikabotti.git"
+  },
+  "author": "Joppe151617",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joppe151617/Ikabotti/issues"
+  },
+  "homepage": "https://github.com/Joppe151617/Ikabotti#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "moment": "^2.24.0",
+    "rss-parser": "^3.7.0"
+  }
+}
