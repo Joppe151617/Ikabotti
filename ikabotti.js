@@ -161,13 +161,17 @@ async function rssLukija() {
 			//console.log("vertaus aika " + isoaika);
 			if (isoaika < maika) {
 				if (item.creator == "Jambo" || item.creator == "Tero") {
+					//Poistetaan viestistä kaikki muotoilut
+					var poista = /(<([^>]+)>)/ig;
+					var viesti = item.content;
+					var parempiViesti = viesti.replace(poista, "");					
 					console.log('Kello on: ' + maika);
-					console.log("Uusi viesti käyttäjältä: " + item.creator + ", ketjuun: " + item.title + " Viestin sisältö: " + item.content + " Linkki ketjuun: " + item.link);
+					console.log("Uusi viesti käyttäjältä: " + item.creator + ", ketjuun: " + item.title + " Viestin sisältö: " + parempiViesti + " Linkki ketjuun: " + item.link);
 					//Viestin lähetys kanavalle
 					//let testiChannel = client.channels.get("539438226960547848");
-					//testiChannel.send("```ini\n [Uusi viesti käyttäjältä:] " + item.creator + "\n [Ketjuun:] " + item.title + " \n [Viestin sisältö:] " + item.content + "\n```" + item.link);
+					//testiChannel.send("```ini\n [Uusi viesti käyttäjältä:] " + item.creator + "\n [Ketjuun:] " + item.title + " \n [Viestin sisältö:] " + parempiViesti + "\n```" + item.link+"?action=lastPost");
 					let ikarkoodaritChannel = client.channels.get("451458886470336523");
-					ikarkoodaritChannel.send("```ini\n [Uusi viesti käyttäjältä:] " + item.creator + "\n [Ketjuun:] " + item.title + " \n [Viestin sisältö:] " + item.content + "\n```" + item.link+"?action=lastPost");
+					ikarkoodaritChannel.send("```ini\n [Uusi viesti käyttäjältä:] " + item.creator + "\n [Ketjuun:] " + item.title + " \n [Viestin sisältö:] " + parempiViesti + "\n```" + item.link+"?action=lastPost");
 					//Suurimman ajan muistiin otto
 					if (valiaika < maika) {
 						valiaika = maika;
