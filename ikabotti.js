@@ -127,7 +127,7 @@ async function pirateReminder() {
 		var timeLeft = deadline + (Math.ceil((time - deadline)/week3)*week3) - time;
 		console.log("piraatti " + timeLeft);
 		
-		if(timeLeft < hour9 && timeLeft > (hour9 - min10)) {
+		if(timeLeft < hour9 && timeLeft > (hour9 - min5)) {
 			if (ekaViesti) {
 				let ikarkoodaritChannel = client.channels.get("451458886470336523");
 				ikarkoodaritChannel.send("Se on merirosvo viikonloppu! Muista 16h kaappausreissu tänä yönä!");
