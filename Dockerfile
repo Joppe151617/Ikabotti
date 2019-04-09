@@ -7,6 +7,6 @@ WORKDIR /app
 COPY package.json .
 RUN npm install --silent
 
-COPY src .
+COPY src src
 
 CMD ["npm", "start"]
