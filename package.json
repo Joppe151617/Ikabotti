@@ -4,6 +4,7 @@
   "description": "",
   "main": "ikabotti.js",
   "scripts": {
+    "start": "node ikabotti.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,6 +12,9 @@
     "url": "git+https://github.com/Joppe151617/Ikabotti.git"
   },
   "author": "Joppe151617",
+  "contributors": [
+    "Ville Nupponen <ville.nupponen@aika.in (https://aika.in/)"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Joppe151617/Ikabotti/issues"
