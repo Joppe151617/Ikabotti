@@ -91,7 +91,7 @@ async function dailyMissionsReminder() {
 		var hour9 = 32000;
 		var min10 = 600;
 		var min = 60;
-		var deadline = 1525643999; // 7.5.18 00:59:59 gmt+2
+		var deadline = 1525647599; // 7.5.18 00:59:59 gmt+2
 		var timeLeft = deadline + (Math.ceil((time - deadline)/week)*week) - time;
 		console.log("päivätehtävä " + timeLeft);
 		
@@ -116,6 +116,7 @@ async function dailyMissionsReminder() {
 //Piraatit muistutus ----------------------------------------------------------------------------------------
 async function pirateReminder() {
 	var ekaViesti = true;
+	var tokaViesti = true;
 	while (true) {
 		var time = new Date().getTime() / 1000;
 		var week3 = 1814400;
@@ -123,15 +124,22 @@ async function pirateReminder() {
 		var hour9 = 32400;
 		var min5 = 300;
 		var min = 60;
-		var deadline = 1547337600; // 13.1.19 3:00:00 gmt+2
+		var deadline = 1547341200; // 13.1.19 3:00:00 gmt+2
 		var timeLeft = deadline + (Math.ceil((time - deadline)/week3)*week3) - time;
 		console.log("piraatti " + timeLeft);
 		
-		if(timeLeft < hour9 && timeLeft > (hour9 - min5)) {
+        if(timeLeft < (day+hour9) && timeLeft > (day+hour9 - min5)) {
 			if (ekaViesti) {
 				let ikarkoodaritChannel = client.channels.get("451458886470336523");
-				ikarkoodaritChannel.send("Se on merirosvo viikonloppu! Muista 16h kaappausreissu tänä yönä!");
+				ikarkoodaritChannel.send("Se on merirosvo viikonloppu!");
 				ekaViesti = false;
+			}
+		}
+		if(timeLeft < hour9 && timeLeft > (hour9 - min5)) {
+			if (tokaViesti) {
+				let ikarkoodaritChannel = client.channels.get("451458886470336523");
+				ikarkoodaritChannel.send("Muista 16h kaappausreissu tänä yönä!");
+				tokaViesti = false;
 			}
 		}
 		if(timeLeft < min5) {
