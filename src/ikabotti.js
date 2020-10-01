@@ -91,7 +91,7 @@ async function dailyMissionsReminder() {
 		var hour9 = 32000;
 		var min10 = 600;
 		var min = 60;
-		var deadline = 1600034399; // 7.5.18 00:59:59 gmt+2 Talviaika: 1525647599 Kesäaika: 1525643999. 14.9.20 00:59:59 1600034399
+		var deadline = 1600034399; // 14.9.20 00:59:59 1600034399
 		var timeLeft = deadline + (Math.ceil((time - deadline)/week)*week) - time;
 		console.log("päivätehtävä " + timeLeft);
 		
@@ -124,7 +124,7 @@ async function pirateReminder() {
 		var hour9 = 32400;
 		var min5 = 300;
 		var min = 60;
-		var deadline = 1547337600; // 13.1.19 3:00:00 gmt+2 Talviaika: 1547341200 Kesäaika: 1547337600
+		var deadline = 1599955200; // 13.9.20 3:00:00 1599955200
 		var timeLeft = deadline + (Math.ceil((time - deadline)/week3)*week3) - time;
 		console.log("piraatti " + timeLeft);
 		
