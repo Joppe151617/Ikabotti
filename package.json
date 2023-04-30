@@ -22,7 +22,7 @@
   "homepage": "https://github.com/Joppe151617/Ikabotti#readme",
   "dependencies": {
     "discord.js": "^11.4.2",
-    "moment": "^2.29.2",
+    "moment": "^2.29.4",
     "rss-parser": "^3.7.0"
   }
 }
